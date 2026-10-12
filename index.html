@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WE Training | Gimnasio en Godoy Cruz, Mendoza</title>
+<meta name="description" content="WE Training: musculación, funcional y OpenBox en Godoy Cruz, Mendoza. Horarios y contacto por WhatsApp.">
+<meta name="theme-color" content="#0e0e0e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0e0e;--ink:#f2efe9;--mute:#8d8a84;--line:#2a2a2a;--or:#ff7a00;--wa:#25d366;--pad:clamp(18px,4vw,56px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none}
+.big{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;line-height:.85;letter-spacing:-.01em}
+.or{color:var(--or)}
+.out{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.lbl{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.wrap{padding:0 var(--pad)}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:16px var(--pad);mix-blend-mode:normal;transition:background .3s}
+header.s{background:rgba(14,14,14,.9);backdrop-filter:blur(8px)}
+.brand{font-size:1.9rem}
+.brand i{font-style:normal;color:var(--or)}
+.menu{display:flex;gap:26px;align-items:center;font-size:.9rem}
+.menu a:not(.pill):hover{color:var(--or)}
+.pill{background:var(--or);color:#0e0e0e;padding:10px 20px;font-weight:700;border-radius:0;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transition:.2s}
+.pill:hover{background:var(--ink)}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer;position:relative}
+.burger::before,.burger::after{content:"";position:absolute;left:8px;right:8px;height:2px;background:var(--ink);transition:.3s}
+.burger::before{top:15px}.burger::after{top:23px}
+.burger.x::before{transform:translateY(4px) rotate(45deg)}.burger.x::after{transform:translateY(-4px) rotate(-45deg)}
+
+/* hero */
+.hero{min-height:100svh;padding:110px var(--pad) 40px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-20%;top:-10%;width:70vmax;height:70vmax;background:radial-gradient(circle,rgba(255,122,0,.35),transparent 60%);animation:drift 12s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-8%,10%)}}
+.hero h1{font-size:clamp(5rem,27vw,23rem);position:relative;z-index:2}
+@media(max-height:760px) and (min-width:821px){.badge,.badge-c{display:none}}
+.hero h1 .ln{display:block;overflow:hidden;padding-top:.18em;margin-top:-.18em}
+.hero h1 .ln:nth-child(2){line-height:1.08;margin-top:-.1em}
+.hero h1 .ln span{display:block;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 .ln:nth-child(2) span{animation-delay:.12s}
+@keyframes up{to{transform:none}}
+.hero-bot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:34px;flex-wrap:wrap;position:relative}
+.hero-bot p{max-width:380px;color:#c9c6bf;font-size:1.05rem}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;font-weight:700;font-size:1rem;border:2px solid var(--ink);transition:.25s;cursor:pointer;background:none;color:var(--ink);font-family:inherit}
+.btn:hover{background:var(--ink);color:#0e0e0e}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:#05260f}
+.btn.wa:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(37,211,102,.35)}
+.btn svg{width:20px;height:20px;fill:currentColor}
+.badge{position:absolute;right:var(--pad);top:120px;width:130px;height:130px;animation:spin 18s linear infinite}
+.badge text{font-family:'DM Sans';font-size:11.5px;letter-spacing:3px;fill:var(--ink);text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge-c{position:absolute;right:calc(var(--pad) + 45px);top:165px;width:40px;height:40px;background:var(--or);border-radius:50%;display:grid;place-items:center;font-weight:900;color:#0e0e0e}
+
+/* sections */
+section{padding:clamp(70px,10vw,140px) 0}
+.head{display:flex;gap:18px;align-items:baseline;margin-bottom:40px;border-top:1px solid var(--line);padding-top:18px}
+.head .n{color:var(--or);font-weight:700;font-size:.9rem}
+
+/* classes */
+.rows a.row{display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:16px;padding:26px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .35s,color .25s}
+.row::before{content:"";position:absolute;inset:0 calc(var(--pad)*-1);background:var(--or);transform:scaleY(0);transform-origin:bottom;transition:transform .35s;z-index:-1}
+.rows{position:relative;z-index:0}
+.row:hover::before,.row:active::before{transform:scaleY(1)}
+.row:hover{color:#0e0e0e;padding-left:18px}
+.row .num{font-size:.9rem;font-weight:700}
+.row h3{font-size:clamp(3rem,11vw,8rem)}
+.row .d{max-width:260px;font-size:.9rem;color:var(--mute);transition:color .25s}
+.row:hover .d{color:#0e0e0e}
+.row .arr{font-size:2.4rem;transition:transform .3s}
+.row:hover .arr{transform:rotate(-45deg)}
+
+/* schedule */
+.sch{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:clamp(24px,5vw,80px)}
+.sch h2{font-size:clamp(3.5rem,9vw,7rem);margin-bottom:18px}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:24px;position:sticky;top:70px;z-index:5;background:var(--bg);padding:8px 0}
+.day{background:none;border:1px solid var(--line);color:var(--ink);padding:12px 0;cursor:pointer;font-family:'Big Shoulders Display';font-weight:800;font-size:1.25rem;letter-spacing:.04em;position:relative;transition:.2s}
+.day small{display:block;font-family:'DM Sans';font-weight:400;font-size:.62rem;color:var(--mute);letter-spacing:.1em}
+.day.on{background:var(--or);color:#0e0e0e;border-color:var(--or)}
+.day.on small{color:#0e0e0e}
+.day.hoy::after{content:"";position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;background:var(--or)}
+.day.on.hoy::after{background:#0e0e0e}
+.list{list-style:none}
+.slot{display:grid;grid-template-columns:76px 1fr auto;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);animation:in .45s both}
+@keyframes in{from{opacity:0;transform:translateX(24px)}}
+.slot .t{font-family:'Big Shoulders Display';font-weight:800;font-size:1.8rem;color:var(--mute)}
+.slot .a{font-family:'Big Shoulders Display';font-weight:900;font-size:clamp(1.8rem,5vw,2.8rem);text-transform:uppercase;line-height:1}
+.slot .k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.slot.Funcional .a{color:var(--or)}
+.slot.OpenBox .a{-webkit-text-stroke:1.5px var(--ink);color:transparent}
+.slot.pausa .a{font-size:1rem;font-family:'DM Sans';font-weight:500;color:var(--mute);text-transform:none}
+.slot.pausa{opacity:.55}
+.slot.now{background:linear-gradient(90deg,rgba(255,122,0,.16),transparent)}
+.slot.now .t{color:var(--or)}
+.slot.now .k::before{content:"● ";color:var(--or)}
+.slot.vacio{display:block;color:var(--mute);padding:40px 0}
+.sch .info{color:var(--mute);margin-bottom:24px;font-size:.95rem}
+.key{display:flex;flex-direction:column;gap:8px;font-size:.85rem;color:var(--mute)}
+.key b{font-family:'Big Shoulders Display';font-size:1.1rem;color:var(--ink);text-transform:uppercase;margin-right:6px}
+
+/* place */
+.place{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,70px);align-items:end}
+.place h2{font-size:clamp(3.4rem,10vw,8rem);margin-bottom:26px}
+.place address{font-style:normal;font-size:1.2rem;margin-bottom:24px}
+.place iframe{width:100%;height:100%;min-height:360px;border:0;filter:grayscale(1) invert(.92) contrast(.85)}
+
+/* cta */
+.cta{background:var(--or);color:#0e0e0e;padding:clamp(60px,9vw,120px) var(--pad);overflow:hidden}
+.cta h2{font-size:clamp(3.4rem,15vw,13rem);margin-bottom:34px}
+.cta .btn{border-color:#0e0e0e;color:#0e0e0e}
+.cta .btn:hover{background:#0e0e0e;color:var(--or)}
+.cta .btn.dark{background:#0e0e0e;color:var(--ink)}
+.cta .btn.dark:hover{background:transparent;color:#0e0e0e}
+/* hold to lift */
+.lift{position:relative;display:inline-flex;align-items:center;gap:18px;padding:0 34px 0 0;height:84px;background:#0e0e0e;color:var(--ink);border:0;cursor:pointer;overflow:hidden;font-family:inherit;user-select:none;-webkit-user-select:none;touch-action:none;clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%)}
+.lift .fill{position:absolute;inset:0;background:var(--wa);transform:scaleX(var(--p,0));transform-origin:left}
+.lift .arm{position:relative;width:84px;height:84px;display:grid;place-items:center;font-size:2.4rem;transform:scale(calc(1 + var(--p,0)*.55)) rotate(calc(var(--p,0)*-14deg));transition:transform .08s}
+.lift.hold .arm{animation:flex .35s ease-in-out infinite alternate}
+@keyframes flex{to{translate:0 -4px;filter:drop-shadow(0 0 10px #fff)}}
+.lift .tx{position:relative;display:flex;flex-direction:column;align-items:flex-start;text-align:left;line-height:1.1}
+.lift .tx b{font-family:'Big Shoulders Display';font-weight:900;font-size:1.7rem;text-transform:uppercase}
+.lift .tx small{font-size:.78rem;opacity:.8}
+.lift.hold,.lift.done{color:#05260f}
+.lift.done{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.06)}}
+.lift-alt{display:block;margin-top:14px;font-size:.85rem;text-decoration:underline}
+.pt{position:fixed;z-index:99;width:8px;height:8px;border-radius:50%;pointer-events:none}
+
+/* drop dumbbell */
+.drop{position:fixed;z-index:98;pointer-events:none;width:120px;margin-left:-60px;top:0;left:0}
+.drop svg{width:100%;display:block;filter:drop-shadow(0 12px 18px rgba(0,0,0,.6))}
+body.shake{animation:shake .45s}
+@keyframes shake{20%{transform:translate(-6px,5px)}40%{transform:translate(6px,-4px)}60%{transform:translate(-4px,3px)}80%{transform:translate(3px,-2px)}}
+.rep{width:90px;margin-bottom:18px;color:var(--or)}
+.rep svg{width:100%;display:block}
+.rep.go{animation:rep .6s cubic-bezier(.3,1.5,.5,1)}
+@keyframes rep{0%{transform:translateY(0)}35%{transform:translateY(-22px) scale(1.12)}100%{transform:none}}
+
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:16px 0}
+.mq div{display:flex;gap:40px;width:max-content;font-size:clamp(1.8rem,4vw,3rem);animation:mq 24s linear infinite;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+footer{padding:28px var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--mute);font-size:.85rem}
+footer a:hover{color:var(--or)}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:50;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.fab svg{width:30px;height:30px;fill:#fff}
+.fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:pl 2s infinite}
+@keyframes pl{to{transform:scale(1.6);opacity:0}}
+
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:820px){
+ .burger{display:block}
+ .menu{position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;gap:28px;font-size:2.4rem;font-family:'Big Shoulders Display';font-weight:900;text-transform:uppercase;transform:translateY(-100%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
+ .menu{visibility:hidden;height:100vh;height:100dvh;transition:transform .45s cubic-bezier(.7,0,.2,1),visibility 0s .45s}
+ header.s{backdrop-filter:none;background:rgba(14,14,14,.96)}
+ .menu.open{transform:none;visibility:visible;transition-delay:0s}
+ .menu .pill{font-family:'DM Sans';font-size:1rem}
+ header{z-index:60}
+ .burger{z-index:70}
+ .sch,.place{grid-template-columns:1fr}
+ .badge,.badge-c{display:none}
+ .row{grid-template-columns:36px 1fr 30px!important}
+ .row .d{display:none}
+ .row .arr{font-size:1.8rem}
+ .days{top:60px}
+ .slot{grid-template-columns:62px 1fr auto}
+ .slot .t{font-size:1.5rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.hero h1 .ln span{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+ <a href="#" class="brand big">WE<i>.</i>TRAINING</a>
+ <nav class="menu" id="menu">
+  <a href="#clases">Clases</a>
+  <a href="#horarios">Horarios</a>
+  <a href="#lugar">Ubicación</a>
+  <a class="pill wa" href="#">Escribinos</a>
+ </nav>
+ <button class="burger" id="bg" aria-label="Menú"></button>
+</header>
+
+<main>
+<div class="hero">
+ <svg class="badge" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="c" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0"/></defs><text><textPath href="#c">Godoy Cruz · Mendoza · Argentina ·</textPath></text></svg>
+ <div class="badge-c" aria-hidden="true">W</div>
+ <h1 class="big">
+  <span class="ln"><span>Entrená</span></span>
+  <span class="ln"><span class="or">sin <span class="out" style="display:inline;transform:none;-webkit-text-stroke-color:var(--or)">límites</span></span></span>
+ </h1>
+ <div class="hero-bot">
+  <p>Gimnasio de barrio con actitud grande. Musculación, funcional y OpenBox en Godoy Cruz.</p>
+  <div class="btns">
+   <a class="btn wa" href="#"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg>Pedir información</a>
+   <a class="btn" href="#horarios">Ver horarios</a>
+  </div>
+ </div>
+</div>
+
+<div class="mq" aria-hidden="true"><div class="big"><span>Musculación</span><span class="or">/</span><span class="out">Funcional</span><span class="or">/</span><span>OpenBox</span><span class="or">/</span><span>Musculación</span><span class="or">/</span><span class="out">Funcional</span><span class="or">/</span><span>OpenBox</span><span class="or">/</span><span>Musculación</span><span class="or">/</span><span class="out">Funcional</span><span class="or">/</span><span>OpenBox</span><span class="or">/</span><span>Musculación</span><span class="or">/</span><span class="out">Funcional</span><span class="or">/</span><span>OpenBox</span><span class="or">/</span></div></div>
+
+<section id="clases">
+ <div class="wrap">
+  <div class="head rv"><span class="n">01</span><span class="lbl">Clases</span></div>
+  <div class="rows">
+   <a class="row rv wa" href="#" data-msg="Hola! Quiero info sobre Musculación en WeTraining"><span class="num">01</span><h3 class="big">Musculación</h3><span class="d">Fuerza y masa muscular con rutinas a tu medida.</span><span class="arr">→</span></a>
+   <a class="row rv wa" href="#" data-msg="Hola! Quiero info sobre Funcional en WeTraining"><span class="num">02</span><h3 class="big">Funcional</h3><span class="d">Clases dinámicas para resistencia y movilidad.</span><span class="arr">→</span></a>
+   <a class="row rv wa" href="#" data-msg="Hola! Quiero info sobre OpenBox en WeTraining"><span class="num">03</span><h3 class="big">OpenBox</h3><span class="d">Franjas libres para entrenar a tu ritmo.</span><span class="arr">→</span></a>
+  </div>
+ </div>
+</section>
+
+<section id="horarios">
+ <div class="wrap">
+  <div class="head rv"><span class="n">02</span><span class="lbl">Horarios</span></div>
+  <div class="sch">
+   <div class="rv">
+    <div class="rep" id="rep"></div>
+    <h2 class="big">Elegí tu <span class="or">día</span></h2>
+    <p class="info">Tocá un día y mirá qué se entrena hora por hora. Deslizá para cambiar de día.</p>
+    <div class="key">
+     <span><b>Musculación</b>sala con rutina</span>
+     <span><b class="or">Funcional</b>clase guiada</span>
+     <span><b>OpenBox</b>entrenamiento libre</span>
+    </div>
+    <a class="btn wa" style="margin-top:28px" href="#" data-msg="Hola! Quiero consultar por horarios en WeTraining"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg>Consultar horarios</a>
+   </div>
+   <div class="rv">
+    <div class="days" id="days"></div>
+    <ul class="list" id="list"></ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="lugar">
+ <div class="wrap">
+  <div class="head rv"><span class="n">03</span><span class="lbl">Ubicación</span></div>
+  <div class="place">
+   <div class="rv">
+    <h2 class="big">Vení a<br><span class="or">conocernos</span></h2>
+    <address>Cartagena 1125<br>Godoy Cruz, Mendoza (M5504)</address>
+    <div class="btns">
+     <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=We+training+Cartagena+1125+Godoy+Cruz+Mendoza">Cómo llegar</a>
+     <a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/wetraining.box/">@wetraining.box</a>
+    </div>
+   </div>
+   <iframe class="rv" loading="lazy" title="Mapa de WE Training" src="https://www.google.com/maps?q=We+training,+Cartagena+1125,+M5504+Godoy+Cruz,+Mendoza&output=embed"></iframe>
+  </div>
+ </div>
+</section>
+
+<div class="cta">
+ <h2 class="big rv">Tu primer<br>paso es<br>un mensaje</h2>
+ <button class="lift" id="lift" type="button" aria-label="Mantené apretado para escribir por WhatsApp">
+  <span class="fill"></span><span class="arm">💪</span>
+  <span class="tx"><b>Mantené para levantar</b><small>Cargá la barra y abrimos WhatsApp</small></span>
+ </button>
+ <a class="lift-alt wa" href="#">¿Preferís escribir directo? Tocá acá</a>
+</div>
+</main>
+
+<footer>
+ <span>© <span id="y"></span> WE Training · Godoy Cruz, Mendoza</span>
+ <a href="https://www.instagram.com/wetraining.box/" target="_blank" rel="noopener">Instagram</a>
+</footer>
+
+<a class="fab wa" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><use href="#i-wa"/></svg></a>
+
+<svg width="0" height="0" style="position:absolute"><symbol id="i-wa" viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2zm0 1.8a8.1 8.1 0 1 1-4.3 14.96l-.3-.19-3.1.82.83-3.02-.2-.31A8.1 8.1 0 0 1 12.04 3.8zM8.6 7.5c-.2 0-.5.07-.75.35-.26.28-1 .98-1 2.4s1.03 2.78 1.17 2.97c.15.2 2 3.2 4.9 4.36 2.4.95 2.9.76 3.4.71.52-.05 1.68-.69 1.92-1.35.24-.67.24-1.24.17-1.36-.07-.12-.26-.2-.55-.34-.29-.15-1.7-.84-1.97-.94-.26-.1-.46-.15-.65.15-.2.28-.74.93-.9 1.12-.17.2-.33.22-.62.07-.29-.14-1.2-.44-2.3-1.42-.85-.76-1.43-1.7-1.6-1.98-.16-.29-.02-.44.13-.58.13-.13.29-.34.43-.5.15-.17.2-.29.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.58-.9-2.16-.23-.56-.47-.48-.65-.49z"/></symbol></svg>
+
+<script>
+const PHONE="5492615772463";
+const wa=m=>`https://api.whatsapp.com/send?phone=${PHONE}&text=${encodeURIComponent(m||"Hola! Quiero más información sobre WeTraining")}`;
+document.querySelectorAll('.wa').forEach(a=>{a.href=wa(a.dataset.msg);a.target="_blank";a.rel="noopener"});
+document.getElementById('y').textContent=new Date().getFullYear();
+
+// header / menu
+const hd=document.getElementById('hd'),menu=document.getElementById('menu'),bg=document.getElementById('bg');
+addEventListener('scroll',()=>hd.classList.toggle('s',scrollY>40),{passive:true});
+const tog=o=>{menu.classList.toggle('open',o);bg.classList.toggle('x',o);document.body.style.overflow=o?'hidden':''};
+bg.onclick=()=>tog(!menu.classList.contains('open'));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>tog(false)));
+
+// schedule
+const F="Funcional",M="Musculación",O="OpenBox";
+const names=["LUN","MAR","MIE","JUE","VIE","SAB"];
+const full=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+// por día: hora -> actividad
+const week=[
+ {7:F,8:M,9:F,10:M,11:O,15:O,16:O,17:O,18:O,19:M,20:F,21:M},
+ {7:M,8:F,9:M,10:F,11:O,15:O,16:O,17:O,18:O,19:M,20:F,21:M},
+ {7:F,8:M,9:F,10:M,11:O,15:O,16:O,17:O,18:O,19:M,20:F,21:M},
+ {7:M,8:F,9:M,10:F,11:O,15:O,16:O,17:O,18:O,19:M,20:F,21:M},
+ {7:F,8:M,9:F,10:M,11:O,15:O,16:O,17:O,18:O,19:M,20:F,21:M},
+ {9:F,10:M,11:O}
+];
+const kind={[F]:"Clase guiada",[M]:"Sala",[O]:"Libre"};
+const now=new Date(),jsDay=now.getDay(),today=jsDay===0?-1:jsDay-1,hr=now.getHours();
+let cur=today>=0?today:0;
+const daysEl=document.getElementById('days'),listEl=document.getElementById('list');
+daysEl.innerHTML=names.map((n,i)=>`<button class="day${i===today?' hoy':''}" data-i="${i}">${n}<small>${i===today?'HOY':'&nbsp;'}</small></button>`).join("");
+function render(){
+ daysEl.querySelectorAll('.day').forEach((b,i)=>b.classList.toggle('on',i===cur));
+ const d=week[cur],hs=Object.keys(d).map(Number),min=Math.min(...hs),max=Math.max(...hs);
+ let h="",k=0;
+ for(let t=min;t<=max;t++){
+  const a=d[t],isNow=cur===today&&hr===t,delay=`style="animation-delay:${k++*35}ms"`;
+  if(a)h+=`<li class="slot ${a}${isNow?' now':''}" ${delay}><span class="t">${String(t).padStart(2,"0")}:00</span><span class="a">${a}</span><span class="k">${isNow?'Ahora':kind[a]}</span></li>`;
+  else if(d[t-1]){let e=t;while(!d[e+1]&&e<max)e++;
+   h+=`<li class="slot pausa" ${delay}><span class="t">${String(t).padStart(2,"0")}:00</span><span class="a">Pausa hasta las ${e+1}:00</span><span></span></li>`}
+ }
+ listEl.innerHTML=h;
+}
+daysEl.onclick=e=>{const b=e.target.closest('.day');if(b){cur=+b.dataset.i;render()}};
+// swipe
+let sx=0;
+listEl.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+listEl.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60){cur=Math.max(0,Math.min(5,cur+(dx<0?1:-1)));render()}});
+render();
+
+// ---------- extras: pesas ----------
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const DB=(c="#ff7a00",r=1)=>`<svg viewBox="0 0 120 60"><rect x="30" y="26" width="60" height="8" rx="3" fill="#bbb"/><rect x="14" y="${30-18*r}" width="14" height="${36*r}" rx="3" fill="${c}"/><rect x="2" y="${30-11*r}" width="10" height="${22*r}" rx="3" fill="${c}"/><rect x="92" y="${30-18*r}" width="14" height="${36*r}" rx="3" fill="${c}"/><rect x="108" y="${30-11*r}" width="10" height="${22*r}" rx="3" fill="${c}"/></svg>`;
+const KB=`<svg viewBox="0 0 120 120"><path d="M38 50c-6-30 50-30 44 0" fill="none" stroke="#999" stroke-width="12" stroke-linecap="round"/><circle cx="60" cy="78" r="34" fill="#ff7a00"/><circle cx="60" cy="78" r="12" fill="#0e0e0e" opacity=".25"/></svg>`;
+const GL=`<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#2b2b2b" stroke="#ff7a00" stroke-width="8"/><circle cx="60" cy="60" r="36" fill="none" stroke="#555" stroke-width="3"/><circle cx="60" cy="60" r="12" fill="#0e0e0e"/><text x="60" y="30" font-size="12" font-weight="700" text-anchor="middle" fill="#f2efe9">20 KG</text></svg>`;
+document.getElementById('rep').innerHTML=DB("currentColor",1);
+
+function burst(x,y,n=26,cols=["#ff7a00","#f2efe9","#25d366"]){
+ if(reduce)return;
+ for(let i=0;i<n;i++){
+  const p=document.createElement('i');p.className='pt';p.style.background=cols[i%cols.length];
+  p.style.left=x+'px';p.style.top=y+'px';document.body.appendChild(p);
+  const a=Math.random()*Math.PI*2,d=70+Math.random()*130;
+  p.animate([{transform:'translate(0,0) scale(1)',opacity:1},{transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d+60}px) scale(0)`,opacity:0}],{duration:650+Math.random()*350,easing:'cubic-bezier(.2,.8,.3,1)'}).onfinish=()=>p.remove();
+ }
+}
+function openWA(msg){const w=window.open(wa(msg),'_blank','noopener');if(!w)location.href=wa(msg)}
+
+// tocar una clase: cae su pesa
+document.querySelectorAll('.row').forEach((row,i)=>{
+ row.addEventListener('click',e=>{
+  e.preventDefault();
+  const msg=row.dataset.msg;
+  if(reduce)return openWA(msg);
+  const r=row.getBoundingClientRect(),x=Math.min(Math.max(e.clientX,70),innerWidth-70),y=r.top+r.height/2;
+  const el=document.createElement('div');el.className='drop';
+  el.innerHTML=[DB("#ff7a00",1.15),KB,GL][i];el.style.left=x+'px';document.body.appendChild(el);
+  const h=el.offsetHeight||60,end=y-h/2;
+  el.animate([
+   {transform:`translateY(${-h-40}px) rotate(-25deg)`,offset:0},
+   {transform:`translateY(${end}px) rotate(0deg)`,offset:.5,easing:'ease-out'},
+   {transform:`translateY(${end-60}px) rotate(8deg)`,offset:.7,easing:'ease-in'},
+   {transform:`translateY(${end}px) rotate(0deg)`,offset:.85},
+   {transform:`translateY(${end}px) rotate(0deg)`,offset:1}
+  ],{duration:1000,fill:'forwards'});
+  setTimeout(()=>{document.body.classList.add('shake');burst(x,y+h/2-10,18)},500);
+  setTimeout(()=>document.body.classList.remove('shake'),950);
+  setTimeout(()=>{el.remove();openWA(msg)},1050);
+ });
+});
+
+// repetición al cambiar de día
+const repEl=document.getElementById('rep');
+daysEl.addEventListener('click',()=>{repEl.classList.remove('go');void repEl.offsetWidth;repEl.classList.add('go')});
+
+// mantené para levantar
+const lift=document.getElementById('lift');
+let raf=0,t0=0,holding=false;const DUR=1300;
+function setP(p){lift.style.setProperty('--p',p)}
+function tick(t){
+ if(!holding)return;
+ const p=Math.min(1,(t-t0)/DUR);setP(p);
+ if(navigator.vibrate&&p<1&&Math.random()<.08)navigator.vibrate(8);
+ if(p>=1)return finish();
+ raf=requestAnimationFrame(tick);
+}
+function finish(){
+ holding=false;lift.classList.remove('hold');lift.classList.add('done');
+ const r=lift.getBoundingClientRect();burst(r.left+42,r.top+r.height/2,40);
+ lift.querySelector('b').textContent="¡Listo, campeón!";
+ setTimeout(()=>{openWA("Hola! Quiero empezar a entrenar en WeTraining");},550);
+ setTimeout(()=>{lift.classList.remove('done');setP(0);lift.querySelector('b').textContent="Mantené para levantar"},2200);
+}
+function start(e){if(lift.classList.contains('done'))return;e.preventDefault();holding=true;t0=performance.now();lift.classList.add('hold');raf=requestAnimationFrame(tick)}
+function stop(){if(!holding)return;holding=false;cancelAnimationFrame(raf);lift.classList.remove('hold');setP(0)}
+lift.addEventListener('pointerdown',start);
+['pointerup','pointerleave','pointercancel'].forEach(ev=>lift.addEventListener(ev,stop));
+lift.addEventListener('keydown',e=>{if((e.key===' '||e.key==='Enter')&&!e.repeat)start(e)});
+lift.addEventListener('keyup',e=>{if(e.key===' '||e.key==='Enter')stop()});
+lift.addEventListener('contextmenu',e=>e.preventDefault());
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
